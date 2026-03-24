@@ -1,0 +1,48 @@
+database:
+  path: "./data/open_source_wechat_tools.db"
+
+wechat_accounts:
+  wxoa_demo:
+    app_id: "YOUR_APP_ID"
+    app_secret: "YOUR_APP_SECRET"
+    author_name: "Your Author Name"
+    content_source_url: ""
+    need_open_comment: 1
+    only_fans_can_comment: 0
+    preview:
+      default_wxname: "YOUR_PREVIEW_WXNAME"
+
+task_defaults:
+  wechat_account_id: "wxoa_demo"
+  publish_mode: "manual"
+  kpi_read_target: 1000
+  brand_voice: "专业、清晰、可信"
+
+retry:
+  agent_max_attempts: 3
+  wechat_upload_max_attempts: 3
+  wechat_draft_max_attempts: 2
+  wechat_publish_max_attempts: 2
+  agent_retry_delay_seconds: 0
+  wechat_upload_retry_delay_seconds: 5
+  wechat_draft_retry_delay_seconds: 10
+  wechat_publish_retry_delay_seconds: 30
+  rework_max_count: 3
+
+polling:
+  fast_interval_seconds: 30
+  fast_phase_minutes: 5
+  slow_interval_seconds: 120
+  timeout_minutes: 30
+
+metrics_collection:
+  schedule_hours: [24, 48, 168]
+
+paths:
+  scripts_dir: "./scripts"
+  temp_dir: "data/tmp"
+  drafts_dir: "./drafts/by-task"
+
+logging:
+  level: "INFO"
+  log_file: ""
